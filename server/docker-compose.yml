@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:latest
+    restart: always
+    container_name: mongo-entregable
+    hostname: host-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: '${MONGODB_USER}'
+      MONGO_INITDB_ROOT_PASSWORD: '${MONGODB_PASSWORD}'
+    volumes:
+      - ./data:/data/db
+      - ./data/log:/var/log/mongodb/
+    ports:
+      - '${MONGODB_PORT}:27017'

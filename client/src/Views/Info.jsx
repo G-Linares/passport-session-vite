@@ -13,7 +13,6 @@ const Home = () => {
           "http://localhost:8080/info"
         );
         setData(response);
-        console.log(response);
       } catch (e) {
         console.error(e);
       }

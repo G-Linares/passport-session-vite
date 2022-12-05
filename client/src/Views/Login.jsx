@@ -13,9 +13,14 @@ function Login() {
   const submitHandlerLogin = async (event) => {
     event.preventDefault();
     const { data: response } = await axios.post(
-      "http://localhost:4000/login",
+      "http://localhost:8080/login",
       state,
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
     );
     if (response.status === "success") {
       navigate("/home");

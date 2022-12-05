@@ -12,10 +12,16 @@ const Home = () => {
       setIsLoading(true);
       try {
         const { data: response } = await axios.get(
-          "http://localhost:4000/user", // <-- Ruta que apunta al back que trae informacion del User
-          { withCredentials: true } // <--- Importante para que back pueda leer cookies
+          "http://localhost:8080/user", // <-- Ruta que apunta al back que trae informacion del User
+          {
+            withCredentials: true,
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }
         );
         setData(response);
+        console.log(response);
       } catch (e) {
         console.error(e);
       }
@@ -23,6 +29,8 @@ const Home = () => {
     };
     fetchData();
   }, []);
+
+  console.log(data);
 
   const handleLogout = () => {
     navigate("/logout");

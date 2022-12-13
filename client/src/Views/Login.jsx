@@ -13,7 +13,7 @@ function Login() {
   const submitHandlerLogin = async (event) => {
     event.preventDefault();
     const { data: response } = await axios.post(
-      "http://localhost:8080/login",
+      "http://localhost:8080/api/login",
       state,
       {
         withCredentials: true,

@@ -12,7 +12,7 @@ const Home = () => {
       setIsLoading(true);
       try {
         const { data: response } = await axios.get(
-          "http://localhost:8080/user", // <-- Ruta que apunta al back que trae informacion del User
+          "http://localhost:8080/api/user", // <-- Ruta que apunta al back que trae informacion del User
           {
             withCredentials: true,
             headers: {

@@ -10,7 +10,7 @@ const Home = () => {
       setIsLoading(true);
       try {
         const { data: response } = await axios.get(
-          "http://localhost:8080/info"
+          "http://localhost:8080/api/info"
         );
         setData(response);
       } catch (e) {

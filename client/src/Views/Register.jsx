@@ -13,7 +13,7 @@ function Register() {
   const submitHandlerRegister = async (event) => {
     event.preventDefault();
     const { data: response } = await axios.post(
-      "http://localhost:8080/register",
+      "http://localhost:8080/api/register",
       state,
       {
         withCredentials: true,
